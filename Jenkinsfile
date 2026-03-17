@@ -44,6 +44,7 @@ pipeline {
             steps {
                 sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f deployment.yaml'
                 sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f service.yaml'
+		sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config rollout restart deployment python-app'
             }
         }
     }

@@ -15,5 +15,6 @@ spec:
       containers:
       - name: python-app
         image: javitoo10/python-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
