@@ -15,11 +15,12 @@ pipeline {
         stage('test') {
             steps {
                 sh '''
+		    rm -rf .venv
                     python3 -m venv .venv
                     . .venv/bin/activate
-                    pip install --upgrade pip
-                    pip install flask pytest
-                    pytest
+                    python3 -m pip install --upgrade pip
+                    python3 -m pip install flask pytest
+                    python3 -mpytest
                 '''
             }
         }
